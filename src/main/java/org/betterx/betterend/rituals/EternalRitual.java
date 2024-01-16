@@ -203,7 +203,10 @@ public class EternalRitual {
     }
 
     private void activatePortal(Player player, Item keyItem) {
-        if (active) return;
+        /**
+         * disabled portal creation
+         */
+        /*if (active) return;
         willActivate = true;
         updateActiveStateOnPedestals();
 
@@ -237,12 +240,15 @@ public class EternalRitual {
             willActivate = false;
             active = false;
             updateActiveStateOnPedestals();
-        }
+        }*/
     }
 
     private void initPortal(Player player, ResourceLocation worldId, int portalId) {
         targetWorldId = worldId;
-        if (world instanceof ServerLevel sourceWorld) {
+        /**
+         * disabled portal creation
+         */
+        /*if (world instanceof ServerLevel sourceWorld) {
             ServerLevel targetLevel = (ServerLevel) getTargetWorld(portalId);
             PortalBuilder builder = new PortalBuilder(world, targetLevel);
             final WorldBorder worldBorder = targetLevel.getWorldBorder();
@@ -260,7 +266,7 @@ public class EternalRitual {
                 );
                 centerPos.ifPresent(blockPos -> this.exit = blockPos);
             }
-        }
+        }*/
     }
 
     private void doEffects(ServerLevel serverWorld, BlockPos center) {

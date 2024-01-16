@@ -78,7 +78,10 @@ public class PortalBuilder {
     }
 
     public static void generatePortal(Level world, BlockPos center, Direction.Axis axis, int portalId) {
-        BlockPos framePos = center.below();
+        /**
+         * disabled portal creation
+         */
+        /*BlockPos framePos = center.below();
         Direction moveDir = Direction.Axis.X == axis ? Direction.EAST : Direction.NORTH;
         BlockState frame = FRAME.defaultBlockState().setValue(EternalRitual.ACTIVE, true);
         FRAME_POSITIONS.forEach(point -> {
@@ -96,7 +99,7 @@ public class PortalBuilder {
             pos = center.mutable().move(moveDir, -point.x).move(Direction.UP, point.y);
             world.setBlockAndUpdate(pos, portal);
         });
-        generateBase(world, framePos, moveDir);
+        generateBase(world, framePos, moveDir);*/
     }
 
     private static void generateBase(Level world, BlockPos center, Direction moveX) {
@@ -214,7 +217,10 @@ public class PortalBuilder {
             Direction.Axis axis,
             int portalID
     ) {
-        Direction portalDirection = Direction.get(Direction.AxisDirection.POSITIVE, axis);
+        /**
+         * disabled portal creation
+         */
+        /*Direction portalDirection = Direction.get(Direction.AxisDirection.POSITIVE, axis);
         double d = -1.0;
         BlockPos centerPos = null;
         double e = -1.0;
@@ -294,7 +300,8 @@ public class PortalBuilder {
         }
         buildPortal(portalDirection, centerPos, portalID);
 
-        return Optional.of(centerPos.immutable());
+        return Optional.of(centerPos.immutable());*/
+        return Optional.empty();
     }
 
     private void buildPortal(Direction portalDirection, BlockPos centerPos, int portalID) {
